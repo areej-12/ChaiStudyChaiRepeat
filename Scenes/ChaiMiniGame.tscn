@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciokh3f7fnwkb"]
+
+[ext_resource type="Script" uid="uid://c66tow23bqsny" path="res://chai_mini_game.gd" id="1_3lnoo"]
+[ext_resource type="Texture2D" uid="uid://cmdeaex31ya4f" path="res://Assets/4.png" id="1_b6rj1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lnoo"]
+bg_color = Color(0.08627451, 0.08235294, 0.11372549, 1)
+border_width_left = 13
+border_width_top = 13
+border_width_right = 13
+border_width_bottom = 13
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 18.0
+expand_margin_top = 28.0
+expand_margin_right = 25.0
+expand_margin_bottom = 45.0
+shadow_color = Color(0, 0, 0, 0.9411765)
+shadow_size = 6
+shadow_offset = Vector2(0.3, 0.22)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3lnoo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 646.0
+texture = ExtResource("1_b6rj1")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 95.0
+offset_top = 85.0
+offset_right = 704.0
+offset_bottom = 381.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_3lnoo")
+text = "
+Welcome to Make Chai Mini game
+Choose from the ingredients shown on screen:
+🍂  Tea Bag,🥛 Add Milk,🍬 Sugar
+After Adding all the ingredients 
+Click “Start Brewing.”
+YOur Chai is done !!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="TextureRect/Label"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 394.0
+offset_right = 379.0
+offset_bottom = 456.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_3lnoo")
+text = "Press button To continue ----->"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="TextureRect/Label/Label"]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -21.0
+offset_right = 406.0
+offset_bottom = 96.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[connection signal="pressed" from="TextureRect/Label/Label/Button" to="." method="_on_button_pressed"]

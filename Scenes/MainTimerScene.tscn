@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://i4ww7xpb4tc3"]
+
+[ext_resource type="Texture2D" uid="uid://pmwoos84n2e3" path="res://Assets/2.png" id="1_0nnwv"]
+[ext_resource type="Script" uid="uid://dw54f5lmoxsff" path="res://main_timer_scene.gd" id="1_2tppf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nnwv"]
+bg_color = Color(0.08627451, 0.08235294, 0.11372549, 1)
+border_width_left = 13
+border_width_top = 13
+border_width_right = 13
+border_width_bottom = 13
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 18.0
+expand_margin_top = 28.0
+expand_margin_right = 25.0
+expand_margin_bottom = 45.0
+shadow_color = Color(0, 0, 0, 0.9411765)
+shadow_size = 6
+shadow_offset = Vector2(0.3, 0.22)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2tppf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 642.0
+texture = ExtResource("1_0nnwv")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_left = 95.0
+offset_top = 85.0
+offset_right = 630.0
+offset_bottom = 342.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_0nnwv")
+text = "Welcome to the Chai.Study.Chai.Repeat!
+-> Press Start to begin your session
+-> Avoid distractions until the timer ends
+->Press Pause or Reset as needed.
+->After Completing a session make Chai
+>Enjoy your break and then Restart :) ."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 394.0
+offset_right = 379.0
+offset_bottom = 456.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_0nnwv")
+text = "Press button To continue ----->"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Label/Label"]
+layout_mode = 0
+offset_top = -21.0
+offset_right = 417.0
+offset_bottom = 96.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[connection signal="pressed" from="Label/Label/Button" to="." method="_on_button_pressed"]

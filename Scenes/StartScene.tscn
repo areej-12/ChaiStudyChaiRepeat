@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2pqgpwalebvx"]
+
+[ext_resource type="Script" uid="uid://d13c60ow4ioj3" path="res://StartScene.gd" id="1_50cbs"]
+[ext_resource type="Texture2D" uid="uid://r70powg2lhl6" path="res://Assets/1.png" id="1_xtwlf"]
+[ext_resource type="AudioStream" uid="uid://145emrgubwl8" path="res://Assets/calming-rain-257596.mp3" id="2_2j6u4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_50cbs"]
+
+[node name="StartScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_50cbs")
+
+[node name="backgroundMusic" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(758, 239)
+stream = ExtResource("2_2j6u4")
+volume_db = -21.122
+autoplay = true
+
+[node name="music" type="Button" parent="."]
+custom_minimum_size = Vector2(2, 2)
+layout_direction = 1
+layout_mode = 0
+offset_left = 795.0
+offset_top = 244.0
+offset_right = 872.0
+offset_bottom = 283.0
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 22
+text = "MUSIC"
+flat = true
+expand_icon = true
+
+[node name="Background" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 3.0
+offset_right = 1158.0
+offset_bottom = 648.0
+texture = ExtResource("1_xtwlf")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+clip_contents = true
+layout_direction = 1
+layout_mode = 0
+offset_left = 705.0
+offset_top = 119.0
+offset_right = 962.0
+offset_bottom = 409.0
+
+[node name="LetsStart" type="Button" parent="CenterContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_direction = 1
+layout_mode = 2
+text = "
+"
+icon = SubResource("CanvasTexture_50cbs")
+flat = true
+
+[connection signal="pressed" from="CenterContainer/LetsStart" to="." method="_on_lets_start_pressed"]

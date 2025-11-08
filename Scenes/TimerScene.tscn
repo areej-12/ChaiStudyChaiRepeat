@@ -1,0 +1,220 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7nf60jkkhodk"]
+
+[ext_resource type="Script" uid="uid://clc03rvxpm3yd" path="res://timer_scene.gd" id="1_t1yfe"]
+[ext_resource type="Texture2D" uid="uid://dnlg4q02hpwwq" path="res://Assets/page 3.png" id="2_t1yfe"]
+[ext_resource type="Texture2D" uid="uid://k4h6mqntl2hu" path="res://Assets/19.png" id="3_4vxrg"]
+[ext_resource type="AudioStream" uid="uid://145emrgubwl8" path="res://Assets/calming-rain-257596.mp3" id="3_gbus4"]
+[ext_resource type="Texture2D" uid="uid://b1q7ecxj60tah" path="res://Assets/20.png" id="4_m8rvb"]
+[ext_resource type="Texture2D" uid="uid://djbfd556sjbpe" path="res://Assets/21.png" id="5_gbawa"]
+[ext_resource type="Texture2D" uid="uid://c4x18p38qjwe6" path="res://Assets/Break.png" id="6_m8rvb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_t1yfe")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 1157.0
+offset_bottom = 650.0
+texture = ExtResource("2_t1yfe")
+expand_mode = 1
+
+[node name="Shorttimer" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 30.0
+offset_right = 1142.0
+offset_bottom = 244.0
+texture = ExtResource("3_4vxrg")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Shorttimer2" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 153.0
+offset_right = 1149.0
+offset_bottom = 367.0
+texture = ExtResource("4_m8rvb")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Shorttimer3" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 283.0
+offset_right = 1157.0
+offset_bottom = 497.0
+texture = ExtResource("5_gbawa")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Shorttimer4" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 434.0
+offset_right = 460.0
+offset_bottom = 671.0
+texture = ExtResource("6_m8rvb")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="TimerLabel" type="Label" parent="."]
+light_mask = 5
+texture_filter = 2
+layout_mode = 0
+offset_left = 213.0
+offset_top = 93.0
+offset_right = 279.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+theme_override_colors/font_shadow_color = Color(0.017427778, 0.06664117, 0.14258999, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 27
+
+[node name="StartButton" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_left = 152.0
+offset_top = 192.0
+offset_right = 380.0
+offset_bottom = 246.0
+flat = true
+
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 278.0
+offset_right = 376.0
+offset_bottom = 333.0
+flat = true
+
+[node name="ResumeButton" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_left = 155.0
+offset_top = 365.0
+offset_right = 379.0
+offset_bottom = 418.0
+flat = true
+
+[node name="BreakButton" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_left = 160.0
+offset_top = 452.0
+offset_right = 383.0
+offset_bottom = 509.0
+flat = true
+
+[node name="FocusTimer" type="Timer" parent="."]
+physics_interpolation_mode = 1
+process_callback = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 51.0
+offset_right = 955.0
+offset_bottom = 106.0
+exp_edit = true
+rounded = true
+allow_greater = true
+nine_patch_stretch = true
+
+[node name="backgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gbus4")
+autoplay = true
+
+[node name="music" type="Button" parent="."]
+custom_minimum_size = Vector2(2, 2)
+layout_direction = 1
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 539.0
+offset_right = 1103.0
+offset_bottom = 618.0
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 22
+text = "MUSIC"
+flat = true
+expand_icon = true
+
+[node name="HalfTimer" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 848.0
+offset_top = 233.0
+offset_right = 1021.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_group_ = true
+
+[node name="FullTimer" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 856.0
+offset_top = 372.0
+offset_right = 1028.0
+offset_bottom = 383.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_group_ = true
+
+[node name="ShortTimer" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 849.0
+offset_top = 120.0
+offset_right = 1021.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_group_ = true
+
+[node name="Timer_Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 54.0
+offset_right = 789.0
+offset_bottom = 121.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.972549, 0.972549, 0.972549, 1)
+theme_override_colors/font_outline_color = Color(0.9647059, 0.9647059, 0.9647059, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 17
+visible_characters_behavior = 1
+
+[node name="breakbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 533.0
+offset_right = 378.0
+offset_bottom = 592.0
+flat = true
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="breakbutton" to="." method="_on_breakbutton_pressed"]
